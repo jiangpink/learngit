@@ -1,0 +1,109 @@
+<html>
+<body>
+<head>
+<meta charset="utf-8">
+<title>
+  记账表
+</title>
+<style type=text/css>
+ body{
+     background-color:AliceBlue;
+ }
+ th {
+    width: 120px;text-align:center;
+  }
+ td{
+    width: 120px;text-align:center;
+ }
+ input {
+    width: 120px;text-align:center;
+  }
+</style>
+</head>
+<form>
+<input type="button" value="退出" style="float:right;width:50px;" onclick="location.href='enter.html'" />
+<h1 align="center">
+  记账表
+</h1>
+<table id="testTbl" border="1" style="text-align:center;">
+ <tr>
+  <th style="width: 180px;">日期</th>
+  <th>收入</th>
+  <th>饭钱</th>
+  <th>水电费</th>
+  <th>交通费</th>
+  <th>生活用品</th>
+  <th>学习</th>
+  <th>爱好</th>
+  <th>其他</th>
+  <th style="width: 180px;">备注</th>
+  <th >总计</th>
+ </tr>
+ <tr>
+  <td><input type="date" id="myDate" style="width: 180px;"/></th>
+  <td><input type="text" id="myMoney1"/></th>
+  <td><input type="text" id="myMoney2"/></th>
+  <td><input type="text" id="myMoney3"/></th>
+  <td><input type="text" id="myMoney4"/></th>
+  <td><input type="text" id="myMoney5"/></th>
+  <td><input type="text" id="myMoney6"/></th>
+  <td><input type="text" id="myMoney7"/></th>
+  <td><input type="text" id="myMoney8"/></th>
+  <td style="width: 180px;"><input type="text" id="beizhu" style="width: 180px;"/></th>
+  <td></td>
+ </tr>
+</table>
+<input type="button" value="添加记录" onclick="addtr()" style="width: 80px;" />
+<br>
+<input type="text" id="delTextId" style="width: 80px;" /><input type="button" value="删除记录" style="width: 80px;" onclick="delRow()" />
+</form>
+<script type="text/javascript">
+function addtr(){
+   var newTr = document.getElementById("testTbl").insertRow();
+   var newTd0 = newTr.insertCell();
+   var newTd1 = newTr.insertCell();
+   var newTd2 = newTr.insertCell();
+   var newTd3 = newTr.insertCell();
+   var newTd4 = newTr.insertCell();
+   var newTd5 = newTr.insertCell();
+   var newTd6 = newTr.insertCell();
+   var newTd7 = newTr.insertCell();
+   var newTd8 = newTr.insertCell();
+   var newTd9 = newTr.insertCell();
+   var newTd10 = newTr.insertCell();
+   newTd0.innerHTML= document.getElementById("myDate").value;
+   newTd1.innerHTML= document.getElementById("myMoney1").value;
+   newTd2.innerHTML= document.getElementById("myMoney2").value;
+   newTd3.innerHTML= document.getElementById("myMoney3").value;
+   newTd4.innerHTML= document.getElementById("myMoney4").value;
+   newTd5.innerHTML= document.getElementById("myMoney5").value;
+   newTd6.innerHTML= document.getElementById("myMoney6").value;
+   newTd7.innerHTML= document.getElementById("myMoney7").value;
+   newTd8.innerHTML= document.getElementById("myMoney8").value;
+   newTd9.innerHTML= document.getElementById("beizhu").value;
+   var money1 = document.getElementById("myMoney1").value;
+   var money2 = document.getElementById("myMoney2").value;
+   var money3 = document.getElementById("myMoney3").value;
+   var money4 = document.getElementById("myMoney4").value;
+   var money5 = document.getElementById("myMoney5").value;
+   var money6 = document.getElementById("myMoney6").value;
+   var money7 = document.getElementById("myMoney7").value;
+   var money8 = document.getElementById("myMoney8").value;
+   var k = parseInt ( money1 );
+   var l = parseInt ( money2 );
+   var m = parseInt ( money3 );
+   var n = parseInt ( money4 );
+   var o = parseInt ( money5 );
+   var p = parseInt ( money6 );
+   var q = parseInt ( money7 );
+   var r = parseInt ( money8 );
+   newTd10.innerHTML= k - l - m - n - o - p - q -r ;
+}
+function delRow() {
+            var rowIndex = document.getElementById("delTextId").value;
+            var tb = document.getElementById("testTbl");
+            tb.deleteRow(rowIndex);
+        }
+</script>
+</body>
+</html>
